@@ -10,7 +10,24 @@ import  javax.swing.ListSelectionModel;
 public class Jlist extends JFrame implements ActionListener extends EventListener {
     private JList colorlist;
     private  static final  String[] colorNames = {"Black","Pink","Yellow","Green","Blue"};
-    private  static final
+    private  static final  Color[] colors= {Color.black,Color.pink,Color.yellow,Color.green,Color.blue};
+
+    public Jlist(){
+        super("List Example");
+        setLayout(new FlowLayout());
+
+        colorlist= new JList(colorNames);
+        colorlist.setVisibleRowCount(5);
+        colorlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        add(new JScrollPane(colorlist));
+
+        colorlist.addListSelectionListener((new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent event) {
+                {
+
+                        getContentPane().setBackground(colors[colorlist.getSelectedIndex()]);
+
 
                 }
             }
