@@ -8,13 +8,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import  javax.swing.ListSelectionModel;
 public class Jlist extends JFrame implements ActionListener extends EventListener {
-    private JList colorlist;
-    private  static final  String[] colorNames = {"Black","Pink","Yellow","Green","Blue"};
-    private  static final  Color[] colors= {Color.black,Color.pink,Color.yellow,Color.green,Color.blue};
 
-    public Jlist(){
-        super("List Example");
-        setLayout(new FlowLayout());
 
         colorlist= new JList(colorNames);
         colorlist.setVisibleRowCount(5);
